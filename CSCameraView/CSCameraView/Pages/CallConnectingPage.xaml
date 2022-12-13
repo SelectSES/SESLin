@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CSCameraView.Pages.CallConnectingPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasBackButton="False">
+    <ContentPage.Content>
+        <Grid Margin="0,0,0,0">
+            <Image
+                Aspect="AspectFill"
+                HorizontalOptions="FillAndExpand"
+                Source="Background.jpg" />
+            <StackLayout>
+                <Label
+                    BackgroundColor="Transparent"
+                    FontAttributes="Bold"
+                    FontFamily="ErasBoldITC"
+                    FontSize="35"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource TitleStyle}"
+                    Text="Call Connecting&#10;Please Wait....."
+                    VerticalOptions="CenterAndExpand"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

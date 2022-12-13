@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.rhealtech.CSCameraOperation" android:installLocation="preferExternal" android:versionCode="4" android:versionName="5.2">
+	<uses-sdk android:minSdkVersion="23" android:targetSdkVersion="29" />
+	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCEPT_HANDOVER" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+	<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+	<uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+	<uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />
+	<uses-permission android:name="android.permission.READ_CALL_LOG" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+	<uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+	<uses-permission android:name="android.permission.BIND_JOB_SERVICE" />
+	<uses-permission android:name="android.permission.DEVICE_POWER" />
+	<uses-permission android:name="android.permission.BROADCAST_STICKY" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+	<uses-permission android:name="com.google.android.gcm.demo.app.permission.C2D_MESSAGE" />
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<uses-permission android:name="com.courierpilot.permission.MAPS_RECEIVE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+	<uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+	<uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+	<application android:label="SEVA - Select Entry Video Access" android:usesCleartextTraffic="true" android:requestLegacyExternalStorage="true" android:icon="@mipmap/New_RIcon" android:theme="@style/MainTheme">
+		<!--<application android:label="SEVA - Select Entry Video Access" android:usesCleartextTraffic="true" android:requestLegacyExternalStorage="true" android:icon="@mipmap/New_RIcon" android:theme="@android:style/Theme.Translucent.NoTitleBar">-->
+		<!--<meta-data android:name="com.google.firebase.messaging.default_notification_icon"   android:resource="@drawable/AcceptCall" />-->
+		<!--<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AAAALYbPCM8:APA91bF7bpLnnOVPfwimZC016YYo_1YxBzvsBYl2LDJFHfNbJxiRV6Sm6HqhvSYmM9KfRV5G_VnXZMugHMQ0UOi_TFZDIoVxwBykXOATw-2PV1MZbXqBryCnfxfXC5rIH6jm2RJ8vyqJ" />-->
+		<!--New Key after PackageName Change-->
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AAAAE3KnRYs:APA91bF__K3pxzu8sfZZZDh-TqV7IXFMhKQA0wikEMfgyKoyA6_riE8VXY408LtWrk6QacBZOOiJAMJzOpB93Qe654AC4P-a4k4yuP4sIXOGuxOkD-5MOWUkS0u7WPEZ7Nl2aXg0N1fg" />
+		<!--<uses-library android:name="org.apache.http.legacy" android:required="false" />-->
+		<activity android:name=".IncomingActivity" android:showOnLockScreen="true" />
+		<activity android:name=".MainActivity" android:showOnLockScreen="true" />
+		<activity android:name=".SplashActivity" android:showOnLockScreen="true" />
+		<activity android:name=".CallConnectingActivity" android:showOnLockScreen="true" />
+		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:exported="false" />
+		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+				<category android:name="${applicationId}" />
+			</intent-filter>
+		</receiver>
+		<!--<receiver android:name=".BootReceiver" android:enabled="true" android:exported="true" android:permission="android.permission.CLEAR_APP_CACHE">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+				<action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+				<action android:name="android.intent.action.QUICKBOOT_POWERON" />
+				<action android:name="android.intent.action.REBOOT" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</receiver>-->
+		<receiver android:name=".BootReceiver" android:enabled="true" android:exported="true" android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+				<action android:name="android.intent.action.QUICKBOOT_POWERON" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name=".PhoneCallWatcher" android:enabled="true" android:exported="true" android:permission="android.permission.CLEAR_APP_CACHE">
+			<intent-filter>
+				<!--<action android:name="android.intent.action.PHONE_STATE" />-->
+			</intent-filter>
+		</receiver>
+		<receiver android:name=".backgroundmanager.alarmmanager.AlarmReceiver" android:process="com.rhealtech.AlarmReceiver" android:enabled="true" android:exported="true">
+			<!--<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+				<action android:name=" android.os.action.DEVICE_IDLE_MODE_CHANGED" />
+				<action android:name="android.intent.action.QUICKBOOT_POWERON" />
+				<action android:name="android.intent.action.ACTION_BOOT_COMPLETED" />
+				<action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+				<action android:name="android.intent.action.REBOOT" />
+				<action android:name="android.intent.action.QUICKBOOT_POWERON" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>-->
+		</receiver>
+		<receiver android:name=".IncomingActivity">
+			<intent-filter>
+				<!--<action android:name="android.intent.action.PHONE_STATE" />-->
+			</intent-filter>
+		</receiver>
+		<!--<service android:name=".backgroundmanager.LinePhoneService1" android:stopWithTask="false" android:isolatedProcess="true" android:process="com.rhealtech.LinePhoneService1" />-->
+		<service android:name=".LinePhoneService1" android:stopWithTask="false" />
+
+		​<service android:name=".CSCameraJobSchedular" android:label="Word service" android:stopWithTask="false" android:permission="android.permission.BIND_JOB_SERVICE"></service></application>
+</manifest>

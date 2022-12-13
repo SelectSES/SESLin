@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"    
+   android:background="@drawable/Background"
+    android:id="@+id/lytContainer">
+
+    <TextView
+        android:id="@+id/callType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:textColor="@android:color/black"
+        android:text="Incoming Call..."
+        android:textStyle="bold"
+        android:textSize="28dp" 
+       />
+        
+  
+
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:weightSum="1"
+        android:layout_marginBottom="50dp">
+ 
+
+        <LinearLayout
+            android:layout_width="0dp"
+           
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+            <!--<Button
+                android:id="@+id/btnAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="5dp"
+                android:background="@android:color/holo_green_dark"
+                android:text="Accept"
+                android:textColor="@android:color/white"
+              />-->
+
+
+            <ImageView
+                android:id="@+id/btnDecline"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/endcall"
+               
+               
+              />
+
+            
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+            <!--<Button
+                  android:id="@+id/btnDecline"
+              
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                 android:layout_marginEnd="10dp"
+                android:layout_marginStart="5dp"
+                android:text="Decline"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_red_dark"/>-->
+
+            <ImageView
+                android:id="@+id/btnAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/AcceptCall"
+               
+               
+              />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+

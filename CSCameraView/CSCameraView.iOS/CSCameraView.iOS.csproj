@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82AD82FA-5C5F-4122-8D38-AC2647A64DB6}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CSCameraView.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>CSCameraView.iOS</AssemblyName>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <ProvisioningType>manual</ProvisioningType>
+    <UseShortFileNames>True</UseShortFileNames>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <OptimizePNGs>true</OptimizePNGs>
+    <CodesignKey>Apple Distribution: Rheal Software Private Limited (JBKMVHT2V8)</CodesignKey>
+    <CodesignProvision>CSCamearView_AppStore</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchLink>None</MtouchLink>
+    <MtouchInterpreter>
+    </MtouchInterpreter>
+    <BuildIpa>true</BuildIpa>
+    <IpaPackageName>CSCameraOperationMobileAppStoreIPA</IpaPackageName>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchEnableSGenConc>false</MtouchEnableSGenConc>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <BuildIpa>true</BuildIpa>
+    <IpaPackageName>CSCameraOperationApp</IpaPackageName>
+    <CodesignKey>Apple Distribution: Rheal Software Private Limited (JBKMVHT2V8)</CodesignKey>
+    <CodesignProvision>CSCamearView_AppStore</CodesignProvision>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <OptimizePNGs>true</OptimizePNGs>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ActiveCall.cs" />
+    <Compile Include="ActiveCallManager.cs" />
+    <Compile Include="Dependency\CallManager.cs" />
+    <Compile Include="Dependency\CommonDependecyMethods.cs" />
+    <Compile Include="Dependency\DeviceInfo.cs" />
+    <Compile Include="Dependency\HybridWebViewRenderer.cs" />
+    <Compile Include="Dependency\NativeHelper .cs" />
+    <Compile Include="Dependency\VersionInformation.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="ProviderDelegate.cs" />
+    <Compile Include="Renderers\BorderlessEntryRenderer.cs" />
+    <Compile Include="Renderers\iOSLongPressedEffect.cs" />
+    <Compile Include="Renderers\SquareEntryRenderer.cs" />
+    <None Include="Entitlements.plist" />
+    <BundleResource Include="GoogleService-Info.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\OpenSans-Bold.ttf" />
+    <BundleResource Include="Resources\OpenSans-Italic.ttf" />
+    <BundleResource Include="Resources\OpenSans-Regular.ttf" />
+    <BundleResource Include="Resources\OpenSans-SemiBold.ttf" />
+    <BundleResource Include="Resources\PT_Sans-Web-Bold.ttf" />
+    <BundleResource Include="Resources\PT_Sans-Web-Regular.ttf" />
+    <BundleResource Include="Resources\OpenSans-ExtraBold.ttf" />
+    <BundleResource Include="Resources\OpenSans-Light.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs">
+      <Version>7.1.0.475</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.FirebasePushNotification">
+      <Version>2.3.6</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.Permissions">
+      <Version>6.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Connectivity">
+      <Version>3.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugins.Settings">
+      <Version>3.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="Native References/bctoolbox-ios.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+    <NativeReference Include="Native References/bctoolbox.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+    <NativeReference Include="Native References/belcard.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+    <NativeReference Include="Native References/belle-sip.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+    <NativeReference Include="Native References/belr.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+    <NativeReference Include="Native References/lime.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+    <NativeReference Include="Native References/linphone.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+    <NativeReference Include="Native References/linphonetester.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+    <NativeReference Include="Native References/mediastreamer2.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+    <NativeReference Include="Native References/msamr.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+    <NativeReference Include="Native References/mscodec2.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+    <NativeReference Include="Native References/msopenh264.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+    <NativeReference Include="Native References/mssilk.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+    <NativeReference Include="Native References/mswebrtc.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+    <NativeReference Include="Native References/msx264.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+    <NativeReference Include="Native References/ortp.framework">
+      <Kind>Framework</Kind>
+    </NativeReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\CSCameraView\CSCameraView.csproj">
+      <Project>{B3E0623D-47AA-417B-8027-E532CCC74B0F}</Project>
+      <Name>CSCameraView</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\unmute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\endcall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AcceptCall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BackgroundImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CSBackgroundImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\NewRIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\NewRIconTransparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\New_RIcon120.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\New_RIcon152.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\New_RIcon1024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\New_RIcon20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\New_RIcon29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\New_RIcon180.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\New_RIcon40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\New_RIcon58.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\New_RIcon60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\New_RIcon76.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\New_RIcon167.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\New_RIcon87.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\New_RIcon80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon120_120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon120_1201.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon401.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon402.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon581.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon801.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\New_RIcon87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Images.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Disc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\OptionsIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MissedCall.png" />
+  </ItemGroup>
+  <Import Project="..\..\LinphoneShared\LinphoneShared.projitems" Label="Shared" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties TriggeredFromHotReload="False" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

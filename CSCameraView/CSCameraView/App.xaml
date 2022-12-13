@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="CSCameraView.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <OnPlatform x:Key="ErasBoldITC" x:TypeArguments="x:String">
+                <On Platform="Android" Value="ErasBoldITC.TTF" />
+                <On Platform="iOS" Value="ErasBoldITC" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="OpenSansRegular" x:TypeArguments="x:String">
+                <On Platform="Android" Value="OpenSans-Regular.ttf#Open Sans" />
+                <On Platform="iOS" Value="OpenSans-Regular" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="OpenSansBold" x:TypeArguments="x:String">
+                <On Platform="Android" Value="OpenSans-Bold.ttf#Open Sans" />
+                <On Platform="iOS" Value="OpenSans-Bold" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="OpenSansSemiBold" x:TypeArguments="x:String">
+                <On Platform="Android" Value="OpenSans-SemiBold.ttf#Open Sans" />
+                <On Platform="iOS" Value="OpenSans-SemiBold" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="PTSansRegular" x:TypeArguments="x:String">
+                <On Platform="Android" Value="PT_Sans-Web-Regular.ttf#PT Sans" />
+                <On Platform="iOS" Value="PT Sans" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="PTSansBold" x:TypeArguments="x:String">
+                <On Platform="Android" Value="PT_Sans-Web-Bold.ttf#PT Sans" />
+                <On Platform="iOS" Value="PT Sans" />
+            </OnPlatform>
+
+            <!--  OrangeColor	A:255	R:255	G:158	B:2  -->
+            <Color x:Key="OrangeColor">#FF9800</Color>
+            <Color x:Key="BoxBackgroundColor">#F8F8F8</Color>
+            <Color x:Key="ListViewSelected">#b3b3b3</Color>
+            <!--  DimGrayColor	A:255	R:242	G:242	B:242  -->
+            <Color x:Key="DimGrayColor">#F2F2F2</Color>
+            <Color x:Key="DarkGrayColor">#4D4D4D</Color>
+            <Color x:Key="DarkGrayColor_70Percent">#B24D4D4D</Color>
+            <Color x:Key="BlackColor_80Percent">#CC000000</Color>
+
+            <Color x:Key="ExtraDarkGrayColor">#333333</Color>
+            <Color x:Key="LightGrayColor">#B3B3B3</Color>
+            <Color x:Key="ExtraLightGrayColor">#999999</Color>
+            <Color x:Key="DarkGrayDisabledColor">#A9A9A9</Color>
+            <Color x:Key="PlatinumColor">#5E5F61</Color>
+            <Color x:Key="OrangeRedColor">#FF7043</Color>
+            <Color x:Key="PaleOrangeGridColor">#FFCC80</Color>
+            <Color x:Key="PaleOrangeRedGridColor">#FFAB91</Color>
+            <Color x:Key="BirghtRedColor">#FF5722</Color>
+            <Color x:Key="BrightBlueColor">#2196F3</Color>
+            <Color x:Key="GreenColor">#4CAF50</Color>
+            <Color x:Key="SeeMoreTextColor">#2574B4</Color>
+            <Color x:Key="SeeMoreTextIconColor">#167EB3</Color>
+            <Color x:Key="StarColor">#FFD42A</Color>
+            <Color x:Key="DisableStarColor">#ECECEC</Color>
+            <Color x:Key="SeperatorColor">#CCCCCC</Color>
+            <Color x:Key="ToggleViewTitleColor">#666666</Color>
+            <Color x:Key="ToggleViewBackgroundColor">#F9F9F9</Color>
+            <Color x:Key="PaleGridGridColor">#A5D6A7</Color>
+            <Color x:Key="MenuItemBackgroundColor">#2B9AD0</Color>
+            <Color x:Key="LinkedInColor">#4875B4</Color>
+            <Color x:Key="WhiteColor">#FFFFFF</Color>
+
+
+            <Style x:Key="ButtonBase" TargetType="Button">
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform
+                            x:TypeArguments="x:String"
+                            Android="OpenSans-Bold.ttf#Open Sans"
+                            iOS="OpenSans-Bold" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="LabelRegularStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource OpenSansSemiBold}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+
+            <Style x:Key="VersionStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource OpenSansBold}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <Style x:Key="EntryBaseStyle" TargetType="Entry">
+                <Setter Property="FontFamily" Value="{StaticResource OpenSansRegular}" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+
+            <Style
+                x:Key="ButtonBaseStyle"
+                BasedOn="{StaticResource ButtonBase}"
+                TargetType="Button">
+                <Setter Property="HeightRequest" Value="54" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+
+            <Style x:Key="OpenSansRegularEntry" TargetType="Entry">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="None" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform
+                            x:TypeArguments="x:String"
+                            Android="OpenSans-Regular.ttf#Open Sans"
+                            iOS="OpenSans-Regular" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="OpenSansBoldEntry" TargetType="Entry">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform
+                            x:TypeArguments="x:String"
+                            Android="OpenSans-Bold.ttf#Open Sans"
+                            iOS="OpenSans-Bold" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="OpenSansRegularLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="None" />
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform
+                            x:TypeArguments="x:String"
+                            Android="OpenSans-Regular.ttf#Open Sans"
+                            iOS="OpenSans-Regular" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="OpenSansBoldLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform
+                            x:TypeArguments="x:String"
+                            Android="OpenSans-Bold.ttf#Open Sans"
+                            iOS="OpenSans-Bold" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="OpenSansSemiBoldLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="None" />
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform
+                            x:TypeArguments="x:String"
+                            Android="OpenSans-SemiBold.ttf#Open Sans"
+                            iOS="OpenSans-SemiBold" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="PTSansBoldLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform
+                            x:TypeArguments="x:String"
+                            Android="PT_Sans-Web-Bold.ttf#PT Sans"
+                            iOS="PT Sans" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="PTItalicLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="Gray" />
+                <Setter Property="FontAttributes" Value="Italic" />
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform
+                            x:TypeArguments="x:String"
+                            Android="OpenSans-Italic.ttf#Open Sans"
+                            iOS="OpenSans-Italic" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="AlegreyaMediumlabel" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="None" />
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform
+                            x:TypeArguments="x:String"
+                            Android="AlegreyaSansSC-Medium.ttf#AlegreyaSansSC-Medium"
+                            iOS="AlegreyaSansSC-Medium" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style
+                x:Key="TitleStyle"
+                ApplyToDerivedTypes="True"
+                BasedOn="{StaticResource OpenSansBoldLabel}"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+            </Style>
+
+            <Style
+                x:Key="OrangeRedButtonStyle"
+                BasedOn="{StaticResource ButtonBaseStyle}"
+                TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource BirghtRedColor}" />
+            </Style>
+
+            <Style
+                x:Key="GreenButtonStyle"
+                BasedOn="{StaticResource ButtonBaseStyle}"
+                TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource GreenColor}" />
+            </Style>
+
+            <Style
+                x:Key="BlueButtonStyle"
+                BasedOn="{StaticResource ButtonBaseStyle}"
+                TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource BrightBlueColor}" />
+            </Style>
+
+
+
+            <Style
+                x:Key="OrangeButtonStyle"
+                BasedOn="{StaticResource ButtonBaseStyle}"
+                TargetType="Button">
+
+                <Setter Property="BackgroundColor" Value="{StaticResource OrangeColor}" />
+            </Style>
+
+            <Style
+                x:Key="HintCardLoginStyle"
+                ApplyToDerivedTypes="True"
+                BasedOn="{StaticResource OpenSansRegularLabel}"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+
+            <Style
+                x:Key="LabelStyle"
+                ApplyToDerivedTypes="True"
+                BasedOn="{StaticResource PTItalicLabel}"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="15" />
+            </Style>
+
+
+            <Style
+                x:Key="CardCounterStyle"
+                ApplyToDerivedTypes="True"
+                BasedOn="{StaticResource PTSansBoldLabel}"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="33" />
+                <Setter Property="TextColor" Value="{StaticResource GreenColor}" />
+            </Style>
+            <Style
+                x:Key="CardCounterRedStyle"
+                ApplyToDerivedTypes="True"
+                BasedOn="{StaticResource PTSansBoldLabel}"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="22" />
+                <Setter Property="TextColor" Value="#FF0000" />
+            </Style>
+
+            <Style
+                x:Key="MiniCardCounterStyle"
+                ApplyToDerivedTypes="True"
+                BasedOn="{StaticResource PTSansBoldLabel}"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="22" />
+                <Setter Property="TextColor" Value="{StaticResource GreenColor}" />
+            </Style>
+            <Style
+                x:Key="MiniCardCounterRedStyle"
+                ApplyToDerivedTypes="True"
+                BasedOn="{StaticResource PTSansBoldLabel}"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="26" />
+                <Setter Property="TextColor" Value="#FF0000" />
+            </Style>
+
+            <Style
+                x:Key="MemberCountStyle"
+                ApplyToDerivedTypes="True"
+                BasedOn="{StaticResource OpenSansSemiBoldLabel}"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="#B3B3B3" />
+            </Style>
+
+
+            <OnPlatform x:Key="FontIcons" x:TypeArguments="x:String">
+                <On Platform="Android" Value="materialdesignicons-webfont.ttf#Material Design Icons" />
+                <On Platform="iOS" Value="Material Design Icons" />
+            </OnPlatform>
+            <x:String x:Key="ShowPasswordIcon">&#xF6CF;</x:String>
+
+            <FontImageSource
+                x:Key="ShowPassword"
+                FontFamily="{StaticResource FontIcons}"
+                Glyph="{StaticResource ShowPasswordIcon}"
+                Size="24"
+                Color="Black" />
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

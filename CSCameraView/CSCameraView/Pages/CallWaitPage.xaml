@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CSCameraView.Pages.CallWaitPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:CSCameraView.ViewModels"
+    NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <viewmodels:CallWaitPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Margin="0,0,0,0">
+            <Image
+                Aspect="AspectFill"
+                HorizontalOptions="FillAndExpand"
+                Source="CSBackgroundImage.jpg" />
+            <Grid Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Frame
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="0"
+                    Padding="0"
+                    HasShadow="False"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <Grid>
+                        <Image Aspect="AspectFill" Source="Background.jpg" />
+                        <Grid RowDefinitions="*,*,*">
+                            <Frame
+                                x:Name="sendToBackBtn"
+                                Grid.Row="0"
+                                Margin="0,20,20,0"
+                                Padding="0"
+                                BackgroundColor="Transparent"
+                                HasShadow="False"
+                                HorizontalOptions="End"
+                                IsVisible="False"
+                                VerticalOptions="Center">
+                                <StackLayout Orientation="Vertical">
+                                    <Image
+                                        HeightRequest="50"
+                                        Source="NewRIconTransparent.png"
+                                        WidthRequest="50" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="Small"
+                                        Text="Send app to&#10;background"
+                                        TextColor="Black" />
+                                </StackLayout>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="sendToBackBtnTap" Tapped="sendToBackBtnTap_Tapped" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <Frame
+                                x:Name="WarningControl"
+                                Grid.Row="1"
+                                Padding="0"
+                                BackgroundColor="Transparent"
+                                HasShadow="False"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand">
+                                <Grid>
+                                    <Image
+                                        Margin="20,0,20,0"
+                                        Aspect="AspectFill"
+                                        Source="Disc.png" />
+                                    <Label
+                                        Margin="20,20,20,40"
+                                        FontFamily="ErasBoldITC"
+                                        FontSize="Large"
+                                        HorizontalOptions="CenterAndExpand"
+                                        HorizontalTextAlignment="Center"
+                                        Text="DO NOT use this&#10;application while driving"
+                                        TextColor="Black"
+                                        VerticalOptions="CenterAndExpand"
+                                        VerticalTextAlignment="Center" />
+                                </Grid>
+
+                            </Frame>
+                            <Frame
+                                Grid.Row="2"
+                                Padding="20"
+                                BackgroundColor="Transparent"
+                                HasShadow="False"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand">
+                                <Grid>
+                                    <Label
+                                        x:Name="waitingmsgLabel"
+                                        Grid.Row="0"
+                                        BackgroundColor="Transparent"
+                                        FontFamily="ErasBoldITC"
+                                        FontSize="30"
+                                        HorizontalOptions="CenterAndExpand"
+                                        HorizontalTextAlignment="Center"
+                                        IsVisible="true"
+                                        Style="{StaticResource TitleStyle}"
+                                        Text="Standby for Caller..."
+                                        VerticalOptions="CenterAndExpand" />
+
+                                    <Label
+                                        x:Name="InitmsgLabel"
+                                        Grid.Row="0"
+                                        BackgroundColor="Transparent"
+                                        FontFamily="ErasBoldITC"
+                                        FontSize="30"
+                                        HorizontalOptions="CenterAndExpand"
+                                        HorizontalTextAlignment="Center"
+                                        IsVisible="false"
+                                        Style="{StaticResource TitleStyle}"
+                                        Text="Initializing SES User Registration"
+                                        VerticalOptions="CenterAndExpand" />
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </Grid>
+                </Frame>
+
+                <Grid
+                    x:Name="popupGrid"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    ColumnDefinitions="*"
+                    IsVisible="False"
+                    RowDefinitions="*">
+                    <ScrollView>
+                        <Grid
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            ColumnDefinitions="*,*"
+                            IsVisible="True"
+                            RowDefinitions="*,*">
+                            <Frame
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                BackgroundColor="Black"
+                                HasShadow="False"
+                                HorizontalOptions="FillAndExpand"
+                                Opacity="0.75"
+                                VerticalOptions="FillAndExpand" />
+
+                            <Frame
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                BackgroundColor="Transparent"
+                                CornerRadius="10"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand">
+                                <StackLayout
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="EndAndExpand">
+                                    <Button
+                                        x:Name="callHistoryBtn"
+                                        BackgroundColor="LightGray"
+                                        BorderColor="Black"
+                                        BorderWidth="1"
+                                        Clicked="callHistoryBtn_Clicked"
+                                        CornerRadius="10"
+                                        IsVisible="False"
+                                        Text="Call History"
+                                        TextColor="Black" />
+                                    <Button
+                                        x:Name="sendLogsBtn"
+                                        BackgroundColor="LightGray"
+                                        BorderColor="Black"
+                                        BorderWidth="1"
+                                        Clicked="sendLogsBtn_Clicked"
+                                        CornerRadius="10"
+                                        IsVisible="{Binding IsSendLogsVisible}"
+                                        Text="Send Logs"
+                                        TextColor="Black" />
+                                    <Button
+                                        x:Name="tempBtn"
+                                        BackgroundColor="LightGray"
+                                        BorderColor="Black"
+                                        BorderWidth="1"
+                                        Clicked="tempBtn_Clicked"
+                                        CornerRadius="10"
+                                        IsVisible="false"
+                                        Text="TempBtn"
+                                        TextColor="Black" />
+                                    <Button
+                                        x:Name="settingsBtn"
+                                        BackgroundColor="LightGray"
+                                        BorderColor="Black"
+                                        BorderWidth="1"
+                                        Clicked="settingsBtn_Clicked"
+                                        CornerRadius="10"
+                                        Text="Settings"
+                                        TextColor="Black" />
+
+                                    
+
+                                    <Button
+                                        x:Name="signOutBtn"
+                                        BackgroundColor="LightGray"
+                                        BorderColor="Red"
+                                        BorderWidth="1"
+                                        Clicked="signOutBtn_Clicked"
+                                        CornerRadius="10"
+                                        Text="Sign Out"
+                                        TextColor="Red" />
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </ScrollView>
+
+                </Grid>
+
+                <Grid Grid.Row="1" ColumnDefinitions="60,*">
+                    <Frame
+                        x:Name="optionsBtn"
+                        Grid.Column="0"
+                        Margin="0"
+                        Padding="10,0,10,0"
+                        BackgroundColor="Transparent"
+                        HasShadow="False"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <Image
+                            Aspect="AspectFill"
+                            HorizontalOptions="CenterAndExpand"
+                            Source="OptionsIcon"
+                            VerticalOptions="CenterAndExpand" />
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="optionsBtnTap" Tapped="optionsBtnTap_Tapped" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                    <Label
+                        x:Name="Version_Number"
+                        Grid.Column="1"
+                        Margin="0,0,10,0"
+                        HorizontalOptions="End"
+                        Style="{StaticResource VersionStyle}"
+                        VerticalOptions="Center" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

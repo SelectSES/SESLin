@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>195535243471-grn50a1511frnbb5ohcs8qk33d3k8grj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.195535243471-grn50a1511frnbb5ohcs8qk33d3k8grj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB4MV4spSJo8irOB4pa7wqx8zIRtg_YZh8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>195535243471</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.rhealtech.CSCameraOpration</string>
+	<key>PROJECT_ID</key>
+	<string>cscameraopration</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cscameraopration.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:195535243471:ios:c388bdb5809bd4a21c4fba</string>
+</dict>
+</plist>

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CSCameraView.Pages.CallProcess"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Behav="clr-namespace:CSCameraView.Behaviors"
+    xmlns:ViewModels="clr-namespace:CSCameraView.ViewModels"
+    xmlns:controls="clr-namespace:CSCameraView.Controls"
+    xmlns:vlc="clr-namespace:LibVLCSharp.Forms.Shared;assembly=LibVLCSharp.Forms"
+    x:Name="oCallProcess"
+    NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <ViewModels:CallProcessViewModel x:Name="callProcessViewModel" />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <Style Class="btnStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Black" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="20" />
+
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Black" />
+                                <Setter Property="TextColor" Value="White" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Orange" />
+                                <Setter Property="TextColor" Value="White" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid
+            x:Name="mainGrid"
+            Margin="0"
+            Padding="0">
+            <Image
+                Aspect="AspectFill"
+                HorizontalOptions="FillAndExpand"
+                Source="Background.jpg" />
+            <Grid x:Name="contentGrid" Margin="0,20,0,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="7*" />
+                    <RowDefinition Height="3*" />
+                </Grid.RowDefinitions>
+                <controls:HybridWebView
+                    x:Name="videoWebView"
+                    Grid.Row="0"
+                    HorizontalOptions="Center"
+                    IsVisible="false"
+                    VerticalOptions="Center" />
+                <Label
+                    x:Name="lblVideoUrlMessage"
+                    Grid.Row="0"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource TitleStyle}"
+                    Text="Connecting Camera..."
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+
+                <Grid
+                    Grid.Row="1"
+                    ColumnDefinitions="*,Auto,*"
+                    RowDefinitions="Auto,*">
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        FontAttributes="Bold"
+                        FontFamily="ErasBoldITC"
+                        FontSize="36"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="Allow Entry?"
+                        TextColor="Black"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center" />
+                    <Frame
+                        x:Name="btnDonotallowEntry"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="10"
+                        Padding="0"
+                        BackgroundColor="Red"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        HeightRequest="100"
+                        VerticalOptions="Center">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="42"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="NO"
+                            TextColor="White"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center" />
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="btnDonotallowEntry_Clicked" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Label
+                        x:Name="lblTimeCounter"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        FontFamily="ErasBoldITC"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource MiniCardCounterRedStyle}"
+                        TextColor="Black"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center" />
+                    <Frame
+                        x:Name="btnAllowEntry"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Margin="10"
+                        Padding="0"
+                        BackgroundColor="Green"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        HeightRequest="100"
+                        VerticalOptions="Center">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="42"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Text="YES"
+                            TextColor="White"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center" />
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="btnAllowEntry_Clicked" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                </Grid>
+
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
