@@ -2,13 +2,12 @@
 # CSCameraView
 
 CSCameraView using Linphone SDK.
+Download the liblinphone SDK from the following link.
+(https://download.linphone.org/releases/xamarin/)
 
-Linphone SDK .aar file needs to be added to the shared project.
-(https://download.linphone.org/releases/maven_repository/org/linphone/linphone-sdk-android/5.0.21/)
-
+Linphone SDK .aar file needs to be added to the Android project.
 
 CSCameraView.iOS project needs to be configured with following external native references.
-(https://download.linphone.org/releases/ios/)
 
 - bctoolbox.framework
 - bctoolbox-ios.framework
