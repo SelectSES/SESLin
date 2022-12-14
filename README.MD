@@ -3,7 +3,7 @@
 
 CSCameraView using Linphone SDK.
 Download the liblinphone SDK from the following link.
-(https://download.linphone.org/releases/xamarin/)
+(https://download.linphone.org/releases/xamarin/linphone-sdk-xamarin-4.3.4.zip)
 
 Linphone SDK .aar file needs to be added to the Android project.
 
